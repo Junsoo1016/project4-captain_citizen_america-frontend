@@ -1,4 +1,6 @@
-# Captain Citizen America
+# Captain Citizen America!
+![](https://user-images.githubusercontent.com/103589293/178653587-523a6b07-a65d-49ca-bcfa-f6772bda21c4.png)
+
 
 ## Project Description
 Captain Citizen America is a full-stack app. The purpose of this app is to create a safer neighborhood and help people who are in danger such as robbery, sexual molestation, violence and etc. When user clicks an emergency button, it alerts other users with the user's location so they can find the user and come help the user who is in danger.
