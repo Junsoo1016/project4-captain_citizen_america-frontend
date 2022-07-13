@@ -2,8 +2,9 @@ import React, {useState, useCallback, useEffect} from 'react'
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '100%',
-  height: '500px',
+  width: '50%',
+  height: '300px',
+  margin: '0 auto',
 }
 
 const center = {
@@ -12,40 +13,24 @@ const center = {
 }
 
 const options = {
-  mapId: "83b90d4e6415406c"
+  mapId: "fb4ccbd45b2f920e"
 }
 
-function Map(props) {
+function Map() {
   // console.log(props);
   const isLoaded = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyAwcOSQ6hnqoqiXX_1D1ykHOBAZZ2UorHE"
   })
 
-  const coordinatesList = props.postList.map((post) => {
-    // console.log(post.coordinates);
-    return (
-      <MarkerF
-      position= {{lat: post.coordinates.lat, lng: post.coordinates.lng}} 
-      icon={{
-        url:"https://i.ibb.co/4JFPCZP/location-dot-solid.png",
-        scaledSize: new window.google.maps.Size(15,20)
-      }}
-      />
-    )
-  })
-
   return isLoaded ? (
     <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={11}
+        zoom={16}
         options={options}
       >
-
-      await {coordinatesList} 
-
-      </GoogleMap>
+    </GoogleMap>
   ) : <h1>Loading</h1>
 }
 export default React.memo(Map)

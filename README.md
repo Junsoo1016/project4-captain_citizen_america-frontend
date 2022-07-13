@@ -2,6 +2,21 @@
 
 ## Project Description
 Captain Citizen America is a full-stack app. The purpose of this app is to create a safer neighborhood and help people who are in danger such as robbery, sexual molestation, violence and etc. When user clicks an emergency button, it alerts other users with the user's location so they can find the user and come help the user who is in danger.
+
+## Technologies used
+
+### Front-end Technologies
+    - React
+    - React-router-dom
+    - CSS
+
+### Back-end Technologies
+    - Django
+    - Python
+    - Git
+
+## Wireframes
+
 ## User Stories
     - As a user, I'd like to create an account.
     - As a user, I'd like to alert other users when I click the button.
