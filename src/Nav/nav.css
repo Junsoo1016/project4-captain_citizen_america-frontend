@@ -1,0 +1,43 @@
+.navBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    border-bottom: .5px solid #000;
+}
+
+.navLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'American Captain';
+    /* border: 1px solid #fff; */
+    padding-top: 5px;
+    margin: 0;
+}
+
+#shield {
+    width: 36px;
+    height: 36px;
+    padding-right: 5px;
+}
+
+.toggleBtn {
+    margin-right: 30px;
+}
+
+.toggleBtn svg {
+    height: 30px;
+    width: 30px;
+    color: rgb(228, 228, 228);
+}
