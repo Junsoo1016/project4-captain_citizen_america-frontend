@@ -18,6 +18,8 @@ Captain Citizen America is a full-stack app. The purpose of this app is to creat
     - Git
 
 ## Wireframes
+![](https://user-images.githubusercontent.com/103589293/178780709-970adb85-cfbc-4309-8ea8-1c0ca0a4f656.jpg)
+
 
 ## User Stories
     - As a user, I'd like to create an account.
