@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './login.css';
+import { AiOutlineQuestionCircle } from 'react-icons/ai';
 
 const Login = ({userData}) => {
   return (
@@ -29,6 +30,11 @@ const Login = ({userData}) => {
         <Link to='/sign-up'>
           <button className='newAccountBtn'> Sign Up </button>
         </Link>
+
+        <button className="howToUse">
+          <AiOutlineQuestionCircle />
+          <p>How to use</p>
+        </button>
       </div>
   );
 };

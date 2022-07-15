@@ -1,8 +1,8 @@
 .home {
     display: grid;
     max-height: max-content;
-    grid-template-rows: 70px 350px 1fr;
-    border: 1px solid #ccc;
+    grid-template-rows: 70px 350px 200px;
+    /* border: 1px solid #ccc; */
 }
 
 button:hover,
@@ -72,7 +72,7 @@ button.depth:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 }
 
 #alert {
@@ -86,12 +86,12 @@ button.depth:active {
 
 .map {
     height: 350px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 }
 
 .btnBox {
     grid-row: 3;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     display: flex;
     justify-content: center;
     align-items: center;

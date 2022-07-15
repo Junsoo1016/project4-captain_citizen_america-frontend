@@ -61,5 +61,23 @@ input {
     border: 0;
     border-radius: 8px;
     background: linear-gradient(to right, #f6d365 0%, #fda085 100%);
-    margin-bottom: 0px;
+    margin-bottom: 20px;
+}
+
+.howToUse {
+    color: white;
+    background: none;
+    border: none;
+    height: 20px;
+    margin-bottom: 0;
+}
+
+.howToUse svg {
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
+}
+
+.howToUse p:hover {
+    text-decoration: underline;
 }

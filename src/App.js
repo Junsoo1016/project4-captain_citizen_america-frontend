@@ -55,7 +55,7 @@ function App() {
       console.log(userData[index]._id);
       axios
         .put(
-          `https://petstagram-backend.herokuapp.com/petstagram/users/${userData[index]._id}`,
+          `https://captain-citizen-america.herokuapp.com/users/${userData[index]._id}`,
           {
             logIn: true,
           }
@@ -81,7 +81,7 @@ function App() {
   const createUser = () => {
     axios
       .post(
-        'https://petstagram-backend.herokuapp.com/petstagram/users/',
+        'https://captain-citizen-america.herokuapp.com/users/',
         signUpForm
       )
       .then((res) => {

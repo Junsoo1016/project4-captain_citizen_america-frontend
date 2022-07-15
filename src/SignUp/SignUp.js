@@ -1,6 +1,7 @@
 import React from "react";
 import './signUp.css'
 import {Link} from 'react-router-dom'
+import { AiOutlineRollback } from 'react-icons/ai';
 
 const SignUp = ({handleSignUp},{createUser}) => {
     return(
@@ -20,6 +21,13 @@ const SignUp = ({handleSignUp},{createUser}) => {
 
             <Link to="/">
             <button onClick={() => createUser()} className="submitBtn">Submit</button>
+            </Link>
+
+            <Link to="/">
+            <button className="backBtn">
+                <AiOutlineRollback />
+                <p>Go back to log in page</p>
+            </button>
             </Link>
 
         </div>
