@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './nav.css'
-import { VscMenu, VscClose } from "react-icons/vsc";
+import { FaRegUserCircle, FaRegBell, FaHome } from 'react-icons/fa';
+
 
 const Nav = () => {
     const[isActive, setActive] = useState(false)
@@ -17,7 +18,9 @@ const Nav = () => {
                     <h1 className="gradient-text">Captain Citizen America</h1>
                 </div>
                 <div className="toggleBtn">
-                    <VscMenu />
+                    <FaHome id="home"/>
+                    <FaRegBell id="bell"/>
+                    <FaRegUserCircle />
                 </div>
             </div>
         </header>
