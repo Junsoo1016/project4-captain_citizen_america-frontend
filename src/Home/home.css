@@ -1,8 +1,8 @@
-
-button {
-    position: fixed;
-    top: 81%;
-    transform: translate(-50%, -50%);
+.home {
+    display: grid;
+    max-height: max-content;
+    grid-template-rows: 70px 350px 1fr;
+    border: 1px solid #ccc;
 }
 
 button:hover,
@@ -33,12 +33,12 @@ button.depth {
                 0 -1px 2px 8px hsla(0,0%,0%,.5);
     color: #303030;
     cursor: pointer;
-    font: bold 30px/85px sans-serif;
-    height: 200px;
+    font: bold 20px/85px sans-serif;
+    height: 150px;
+    width: 150px;
     padding: 0;
     text-shadow: 0 1px 1px hsla(0,0%,100%,.25),
                  0 -1px 1px hsla(0,0%,0%,.75);
-    width: 200px;
 }
 button.depth:hover {
     color: rgb(255, 85, 0);
@@ -67,15 +67,40 @@ button.depth:active {
     line-height: 86px;
 }
 
-.alert {
-    /* position: absolute;
-    margin: auto;
-    text-align: center;     */
+.alertBox {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+#alert {
     color: #636363;
-    font: bold 28px/85px sans-serif;
+    font-size: 24px;
     text-shadow: 0 1px 1px hsla(0,0%,100%,.25),
     0 -1px 1px hsla(0,0%,0%,.75);
     margin: 0;
+    padding: 0;
+}
+
+.map {
+    height: 350px;
+    border: 1px solid #ccc;
+}
+
+.btnBox {
+    grid-row: 3;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #amount {
