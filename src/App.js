@@ -1,11 +1,12 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Nav from './Nav/Nav';
 import Home from './Home/Home';
 import Login from './LogIn/LogIn';
 import SignUp from './SignUp/SignUp';
+import UserProfile from './UserProfile/UserProfile';
 
 function App() {
 
@@ -29,12 +30,13 @@ function App() {
   }
   , []);
 
+  const navigate = useNavigate()
   const location = useLocation();
   
   const [user, setUser] = useState(null);
 
   const [loginForm, setLoginForm] = useState({
-    username: '',
+    user_id: '',
     password: '',
   });
 
@@ -46,18 +48,17 @@ function App() {
   };
 
   const validateLogin = () => {
+
     const userSignIn = userData.find(
-      (user) => user.username === loginForm.username
+      (user) => user.user_id === loginForm.user_id
     );
     if (userSignIn.password === loginForm.password) {
       console.log('welcome');
-      const index = userData.indexOf(userSignIn);
-      console.log(userData[index]._id);
       axios
         .put(
-          `https://captain-citizen-america.herokuapp.com/users/${userData[index]._id}`,
+          `https://captain-citizen-america.herokuapp.com/users/${user.id}`,
           {
-            logIn: true,
+            login: true,
           }
         )
         .then((res) => {
@@ -92,11 +93,12 @@ function App() {
   };
 
   console.log(userData);
+  console.log(user);
   return (
     <div className="App">
 
       <nav className='nav'>
-        <Nav />
+        <Nav user={user} />
       </nav>
 
       <main>
@@ -119,7 +121,12 @@ function App() {
               <SignUp handleSignUp={handleSignUp} createUser={createUser} />
             }
           />
-        </Routes>
+          <Route
+            path='user-profile'
+            element={<UserProfile user={user} setUser={setUser} />
+          }
+          />
+          </Routes>
       </main>
 
     </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './login.css';
 import { AiOutlineQuestionCircle } from 'react-icons/ai';
 
-const Login = ({userData}) => {
+const Login = ({handleLogin}, {validateLogin}) => {
   return (
       <div className='loginBox'>
 
@@ -13,18 +13,18 @@ const Login = ({userData}) => {
         </div>
 
         <input
-          onChange={(e) => userData.handleLogin(e)}
+          onChange={(e) => handleLogin(e)}
           placeholder='User id'
-          name='username'
+          name='user_id'
         />
         <input
-          onChange={(e) => userData.handleLogin(e)}
+          onChange={(e) => handleLogin(e)}
           placeholder='Password'
           name='password'
         />
 
         <Link to='/home'>
-          <button className='loginBtn'> Log In </button>
+          <button className='loginBtn' onClick={(e) => validateLogin(e)} > Log In </button>
         </Link>
 
         <Link to='/sign-up'>
