@@ -81,3 +81,8 @@ input {
 .howToUse p:hover {
     text-decoration: underline;
 }
+
+.linkBtn {
+    color: white;
+    text-decoration: none;  
+}

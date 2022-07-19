@@ -34,6 +34,9 @@
 
 .toggleBtn {
     margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .toggleBtn svg {
@@ -46,6 +49,31 @@
     padding-right: 20px;
 }
 
+#counter {
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15px;
+    right: 80px;
+}
+
 #home {
     padding-right: 20px;
+}
+
+.notifications {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
 }

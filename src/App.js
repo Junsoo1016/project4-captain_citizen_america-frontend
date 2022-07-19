@@ -7,12 +7,15 @@ import Home from './Home/Home';
 import Login from './LogIn/LogIn';
 import SignUp from './SignUp/SignUp';
 import UserProfile from './UserProfile/UserProfile';
+import { io } from 'socket.io-client';
 
 function App() {
 
   const [userData, setUserData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [socket, setSocket] = useState(null);
+  const [notifications, setNotifications] = useState([])
 
   const getUserData = async () => {
     try {
@@ -30,10 +33,15 @@ function App() {
   }
   , []);
 
+  const user = userData[4];
+
+
+
   const navigate = useNavigate()
   const location = useLocation();
   
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(userData[2]);
+
 
   const [loginForm, setLoginForm] = useState({
     user_id: '',
@@ -47,28 +55,28 @@ function App() {
     });
   };
 
-  const validateLogin = () => {
+  // const validateLogin = () => {
 
-    const userSignIn = userData.find(
-      (user) => user.user_id === loginForm.user_id
-    );
-    if (userSignIn.password === loginForm.password) {
-      console.log('welcome');
-      axios
-        .put(
-          `https://captain-citizen-america.herokuapp.com/users/${user.id}`,
-          {
-            login: true,
-          }
-        )
-        .then((res) => {
-          console.log(res.data);
-          setUser(res.data);
-        });
-    } else {
-      alert('The password you’ve entered is incorrect.');
-    }
-  };
+  //   const userSignIn = userData.find(
+  //     (user) => user.user_id === loginForm.user_id
+  //   );
+  //   if (userSignIn.password === loginForm.password) {
+  //     console.log('welcome');
+  //     axios
+  //       .put(
+  //         `https://captain-citizen-america.herokuapp.com/users/${user.id}`,
+  //         {
+  //           login: true,
+  //         }
+  //       )
+  //       .then((res) => {
+  //         console.log(res.data);
+  //         setUser(res.data);
+  //       });
+  //   } else {
+  //     alert('The password you’ve entered is incorrect.');
+  //   }
+  // };
 
   const [signUpForm, setSignUpForm] = useState(null)
 
@@ -91,14 +99,14 @@ function App() {
         setUserData(oldArray);
       });
   };
-
+  
   console.log(userData);
-  console.log(user);
+
   return (
     <div className="App">
 
       <nav className='nav'>
-        <Nav user={user} />
+        <Nav user={user} socket={socket} notifications={notifications} setNotifications={setNotifications} />
       </nav>
 
       <main>
@@ -106,13 +114,13 @@ function App() {
           <Route 
             path="/home" 
             element={
-            <Home className='home' userData={userData} />
+            <Home className='home' userData={userData} socket={socket} user={user} setNotifications={setNotifications}/>
             } 
           />
           <Route
             path='/'
             element={
-              <Login className='login' handleLogin={handleLogin} validateLogin={validateLogin} />
+              <Login className='login' handleLogin={handleLogin} />
             }
           />
           <Route
@@ -123,7 +131,7 @@ function App() {
           />
           <Route
             path='user-profile'
-            element={<UserProfile user={user} setUser={setUser} />
+            element={<UserProfile user={user}/>
           }
           />
           </Routes>

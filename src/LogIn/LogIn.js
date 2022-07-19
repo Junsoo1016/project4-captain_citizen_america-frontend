@@ -23,11 +23,11 @@ const Login = ({handleLogin}, {validateLogin}) => {
           name='password'
         />
 
-        <Link to='/home'>
+        <Link to='/home' className='linkBtn'>
           <button className='loginBtn' onClick={(e) => validateLogin(e)} > Log In </button>
         </Link>
 
-        <Link to='/sign-up'>
+        <Link to='/sign-up' className='linkBtn'>
           <button className='newAccountBtn'> Sign Up </button>
         </Link>
 
